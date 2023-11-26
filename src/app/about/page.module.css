@@ -34,3 +34,9 @@
     flex-direction: column;
     gap: 30px;
 }
+
+.desc{
+    font-size: 18px;
+    font-weight: 300;
+    text-align: justify;
+}
