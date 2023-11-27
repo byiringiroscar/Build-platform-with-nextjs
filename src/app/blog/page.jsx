@@ -5,11 +5,11 @@ import Image from 'next/image'
 
 const page = () => {
   return (
-    <div className={styles.container}>
-        <Link href='' className={styles}>
+    <div className={styles.mainContainer}>
+        <Link href='/testId' className={styles.container}>
             <div className={styles.imageContainer}>
                 <Image
-                 src=''
+                 src='https://images.pexels.com/photos/4533596/pexels-photo-4533596.jpeg'
                  alt=''
                  width={400}
                  height={250}
@@ -17,8 +17,38 @@ const page = () => {
                  />
             </div>
             <div className={styles.content}>
-                <h1 className={styles.title}></h1>
-                <p className={styles.desc}></p>
+                <h1 className={styles.title}>Test</h1>
+                <p className={styles.desc}>Desc</p>
+            </div>
+        </Link>
+        <Link href='/testId' className={styles.container}>
+            <div className={styles.imageContainer}>
+                <Image
+                 src='https://images.pexels.com/photos/4533596/pexels-photo-4533596.jpeg'
+                 alt=''
+                 width={400}
+                 height={250}
+                 className={styles.image}
+                 />
+            </div>
+            <div className={styles.content}>
+                <h1 className={styles.title}>Test</h1>
+                <p className={styles.desc}>Desc</p>
+            </div>
+        </Link>
+        <Link href='/testId' className={styles.container}>
+            <div className={styles.imageContainer}>
+                <Image
+                 src='https://images.pexels.com/photos/4533596/pexels-photo-4533596.jpeg'
+                 alt=''
+                 width={400}
+                 height={250}
+                 className={styles.image}
+                 />
+            </div>
+            <div className={styles.content}>
+                <h1 className={styles.title}>Test</h1>
+                <p className={styles.desc}>Desc</p>
             </div>
         </Link>
     </div>
