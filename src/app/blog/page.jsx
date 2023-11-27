@@ -6,7 +6,7 @@ import Image from 'next/image'
 const page = () => {
   return (
     <div className={styles.mainContainer}>
-        <Link href='/testId' className={styles.container}>
+        <Link href='/blog/testId' className={styles.container}>
             <div className={styles.imageContainer}>
                 <Image
                  src='https://images.pexels.com/photos/4533596/pexels-photo-4533596.jpeg'
@@ -21,7 +21,7 @@ const page = () => {
                 <p className={styles.desc}>Desc</p>
             </div>
         </Link>
-        <Link href='/testId' className={styles.container}>
+        <Link href='/blog/testId' className={styles.container}>
             <div className={styles.imageContainer}>
                 <Image
                  src='https://images.pexels.com/photos/4533596/pexels-photo-4533596.jpeg'
@@ -36,7 +36,7 @@ const page = () => {
                 <p className={styles.desc}>Desc</p>
             </div>
         </Link>
-        <Link href='/testId' className={styles.container}>
+        <Link href='/blog/testId' className={styles.container}>
             <div className={styles.imageContainer}>
                 <Image
                  src='https://images.pexels.com/photos/4533596/pexels-photo-4533596.jpeg'
