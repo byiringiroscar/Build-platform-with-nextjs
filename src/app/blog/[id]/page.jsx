@@ -9,7 +9,6 @@ async function getData(id) {
   );
  
   if (!res.ok) {
-    console.log('not fpund')
     return notFound()
   }
   return res.json()
