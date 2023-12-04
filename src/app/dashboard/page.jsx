@@ -1,6 +1,7 @@
 "use client"
 import useSWR from 'swr'
 import React, { useEffect, useState } from 'react'
+import { useSession, signIn, signOut } from "next-auth/react"
 
 const Dashboard = () => {
   // const [data, setData] = useState([]);
@@ -27,9 +28,15 @@ const Dashboard = () => {
   // }, [])
 
   // console.log(data)
+  const { data: session, status } = useSession()
+  const userEmail = session?.user?.email
   const fetcher = (...args) => fetch(...args).then(res => res.json())
   const { data, error, isLoading } = useSWR('https://jsonplaceholder.typicode.com/posts', fetcher)
+
   console.log(data)
+  if (status === "loading") {
+    return <p>Hang on there...</p>
+  }
   return (
     <div>
        Dashboard
