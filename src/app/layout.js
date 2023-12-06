@@ -8,10 +8,10 @@ import AuthProvider from "@/components/AuthProvider/AuthProvider"
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
-  title: 'Oscar dev',
-  description: 'Project generated for interaction with user and blogs',
-}
+// export const metadata = {
+//   title: 'Oscar dev',
+//   description: 'Project generated for interaction with user and blogs',
+// }
 
 export default function RootLayout({ children }) {
   return (
