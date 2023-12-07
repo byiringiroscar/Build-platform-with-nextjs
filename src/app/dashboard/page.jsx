@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { useSession, signIn, signOut } from "next-auth/react"
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
+import styles from './page.module.css'
 
 const Dashboard = () => {
   // const [data, setData] = useState([]);
@@ -74,7 +75,7 @@ const Dashboard = () => {
     }
   };
 
-  
+
   if(session.status === 'authenticated'){
     return (
       <div className={styles.container}>
