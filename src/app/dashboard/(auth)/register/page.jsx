@@ -1,12 +1,13 @@
 import React from 'react'
 import Link from 'next/link'
+import styles from './page.module.css'
 
 const Register = () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Create an Account</h1>
       <h2 className={styles.subtitle}>Please sign up to see the dashboard.</h2>
-      <form onSubmit={handleSubmit} className={styles.form}>
+      <form className={styles.form}>
         <input
           type="text"
           placeholder="Username"
@@ -26,7 +27,7 @@ const Register = () => {
           className={styles.input}
         />
         <button className={styles.button}>Register</button>
-        {error && "Something went wrong!"}
+        {/* {error && "Something went wrong!"} */}
       </form>
       <span className={styles.or}>- OR -</span>
       <Link className={styles.link} href="/dashboard/login">
