@@ -47,7 +47,34 @@ const Dashboard = () => {
   if(session.status === 'unauthenticated'){
     router?.push("/dashboard/login")
   }
-  console.log(session)
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const title = e.target[0].value;
+    const desc = e.target[1].value;
+    const img = e.target[2].value;
+    const content = e.target[3].value;
+
+    try {
+      await fetch("/api/posts", {
+        method: "POST",
+        body: JSON.stringify({
+          title,
+          desc,
+          img,
+          content,
+          username: session.data.user.name,
+        }),
+      });
+      mutate();
+      e.target.reset()
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  
   if(session.status === 'authenticated'){
     return (
       <div className={styles.container}>
