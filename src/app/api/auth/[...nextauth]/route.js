@@ -1,24 +1,20 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import GithubProvider from "next-auth/providers/github"
+import CredentialsProvider from "next-auth/providers/credentials";
 import connect from "@/utils/db";
 import User from "@/models/User";
 import bcrypt from 'bcryptjs';
 
 const handler =  NextAuth({
   providers: [
-    GoogleProvider({
-        clientId: process.env.GOOGLE_CLIENT_ID,
-        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      }),
-
-    CredentialsProvider({
+      CredentialsProvider({
       id: "credentials",
       name: "Credentials",
       async authorize(credentials){
         await connect()
         try{
-          const user = User.findOne({email: credentials.email})
+          const user = await User.findOne({email: credentials.email})
           if(user){
             // check password
             const isPasswordCorrect = await bcrypt.compare(
@@ -40,8 +36,15 @@ const handler =  NextAuth({
           throw new Error(err)
         }
       }
-    })
+    }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    }),
   ],
+  pages: {
+    error: "/dashboard/login",
+  },
 });
 
 // export default handler;
