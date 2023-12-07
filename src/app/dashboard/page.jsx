@@ -75,6 +75,17 @@ const Dashboard = () => {
     }
   };
 
+  const handleDelete = async (id) => {
+    try {
+      await fetch(`/api/posts/${id}`, {
+        method: "DELETE",
+      });
+      mutate();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
 
   if(session.status === 'authenticated'){
     return (
